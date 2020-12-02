@@ -1,5 +1,5 @@
 # advent-of-code
 
-[Advent of Code challenges](https://adventofcode.com/)
+My [Advent of Code](https://adventofcode.com/) solutions
 
 ![2020](./2020) - completed in Python3
