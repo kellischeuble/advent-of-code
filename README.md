@@ -1,3 +1,5 @@
-# advent-of-code-2020
+# advent-of-code
 
-This is my repo for the [advent of code challenge](https://adventofcode.com/) for 2020 - completed in Python.
+[Advent of Code challenges](https://adventofcode.com/)
+
+2020 - completed in Python
