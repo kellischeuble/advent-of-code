@@ -2,4 +2,6 @@
 
 My [Advent of Code](https://adventofcode.com/) solutions
 
-![2020](./2020) - completed in Python3
+## Table of Contents
+
+* ![2020](./2020) - completed in Python3
