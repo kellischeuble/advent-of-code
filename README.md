@@ -2,4 +2,4 @@
 
 [Advent of Code challenges](https://adventofcode.com/)
 
-2020 - completed in Python
+![2020](./2020) - completed in Python3
