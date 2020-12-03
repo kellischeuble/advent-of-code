@@ -2,7 +2,10 @@ import csv
 
 
 def find_entries_part_one(expense_report: list) -> tuple:
-
+    """
+    Finds the two entries in the expense report that add up 
+    to 2020
+    """
     seen = set()
 
     for entry in expense_report:
@@ -17,7 +20,10 @@ def find_entries_part_one(expense_report: list) -> tuple:
 
 
 def find_entries_part_two(expense_report: list) -> tuple:
-
+    """
+    Finds the two entries in the expense report that add up 
+    to 2020
+    """
     seen = set()
 
     for entry_one in expense_report:
