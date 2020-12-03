@@ -1,5 +1,6 @@
 import csv
 
+
 def find_entries_part_one(expense_report: list) -> tuple:
 
     seen = set()
@@ -13,6 +14,7 @@ def find_entries_part_one(expense_report: list) -> tuple:
             seen.add(entry)
 
     raise ValueError("Not Found")
+
 
 def find_entries_part_two(expense_report: list) -> tuple:
 
@@ -28,13 +30,16 @@ def find_entries_part_two(expense_report: list) -> tuple:
 
     raise ValueError("Not Found")
 
+
 def solve_part_one():
-    with open("expense_report.csv","r") as report: 
+    with open("expense_report.csv", "r") as report:
         print("ANSWER PART ONE:", find_entries_part_one(report))
 
+
 def solve_part_two():
-    with open("expense_report.csv","r") as report: 
+    with open("expense_report.csv", "r") as report:
         print("ANSWER PART ONE:", find_entries_part_two(report))
+
 
 if __name__ == "__main__":
     solve_part_one()
