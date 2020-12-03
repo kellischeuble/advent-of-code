@@ -11,7 +11,7 @@ def count_trees_in_path(right: int, down: int) -> int:
     """
     Counts the number of trees that one would encounter
     in the map. The map repeats infinitely with the same pattern 
-    to the right.
+    to the right
 
     Args:
         right (int): number of slopes to move right
@@ -38,7 +38,7 @@ def find_product_of_trees(slopes: list) -> int:
     """
     Looks at all paths taken and finds the number
     of trees encountered in each one, then multiplies
-    all of those numbers together.
+    all of those numbers together
 
     Args:
         slopes (list): list of all of the slopes with 
