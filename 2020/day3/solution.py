@@ -1,6 +1,6 @@
 def get_map(file: str) -> list:
     """
-    Returns a 2D map from file
+    Returns a 2D list containing the map from file
     Takes out the last newline char in each row
     """
     with open(file, "r") as MAP:
