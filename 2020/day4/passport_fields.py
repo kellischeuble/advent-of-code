@@ -108,13 +108,12 @@ class EyeColor:
 
 class PassportID:
     rule_length = 9
-    rule_starts_with = "0"
     
     def __init__(self, pid):
         self.pid = pid
 
     def validate(self):
-        return (self.pid[0] == self.rule_starts_with and
+        return (self.pid.isdigit() and
                     len(self.pid) == self.rule_length)
 
 class CountryID:
