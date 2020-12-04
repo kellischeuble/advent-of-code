@@ -1,7 +1,17 @@
-from passport_fields import BirthYear, IssueYear, ExpirationYear, Height, HairColor, EyeColor, PassportID, CountryID
+from passport_fields import (
+    BirthYear,
+    IssueYear,
+    ExpirationYear,
+    Height,
+    HairColor,
+    EyeColor,
+    PassportID,
+    CountryID,
+)
+
 
 class Passport:
-    
+
     def __init__(self, byr, iyr, eyr, hgt, hcl, ecl, pid, cid=None):
         self.byr = BirthYear(byr)
         self.iyr = IssueYear(iyr)
@@ -13,9 +23,15 @@ class Passport:
         self.cid = CountryID(cid)
 
     def validate_passport(self):
-        return (self.byr.validate() and self.iyr.validate() and self.eyr.validate() and
-                    self.hgt.validate() and self.hcl.validate() and self.ecl.validate() and
-                    self.pid.validate())
+        return (
+            self.byr.validate()
+            and self.iyr.validate()
+            and self.eyr.validate()
+            and self.hgt.validate()
+            and self.hcl.validate()
+            and self.ecl.validate()
+            and self.pid.validate()
+        )
 
     def __repr__(self):
         return (
