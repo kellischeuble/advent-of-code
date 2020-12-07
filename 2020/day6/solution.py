@@ -1,58 +1,47 @@
-def part_one():
-    with open("answers.csv", "r") as answers:
+def split_into_groups(unparsed_file: str) -> list:
+    groups = unparsed_file.split("\n\n")
+    return groups
 
-        group = set()
-        no_of_unique_answers = []
+def find_unique_answers_per_group(group: list) -> int:
+            chars = set()
+            for letter in group:
+                if not letter == "\n":
+                    chars.add(letter)   
+            return len(chars)
 
-        for answer in answers:
-            for char in answer:
-                group.add(char)
-            if answer == "\n":
-                group = group - {"\n"}
-                print(group)
-                no_of_unique_answers.append(len(group))
-                group = set()
-        group = group - {"\n"}
-        no_of_unique_answers.append(len(group))
-        print(group)
-        print(no_of_unique_answers)
+def count_similar_answers(group: list) -> int:
+    chars = set()
+    for char in group[0]:
+        word_in_all = True
+        for word in group[1:]:
+            if char not in word and not word == "":
+                word_in_all = False
+        if word_in_all:
+            chars.add(char)
+    return len(chars)
 
-    sum = 0 
+def split_group(group: list) -> list:
+    return group.split("\n")
 
-    for no in no_of_unique_answers:
-        sum += no
-
+def part_one(groups: list) -> int:
+    sum = 0
+    for group in groups:
+        sum += find_unique_answers_per_group(group)
     return sum
 
-def part_two():
+def part_two(groups: list) -> int:
+    sum = 0
+    for group in groups:
+        people = split_group(group)
+        sum += count_similar_answers(people)
+    return sum
+
+if __name__ == "__main__":
     with open("answers.txt", "r") as answers:
-        groups_responses = list()
-        all_same = list()
+        groups = split_into_groups(answers.read())
 
-        for answer in answers:
-            print("ANSWER", answer)
-            if not answer == "\n":
-                groups_responses.append(answer.split("\n")[0])
-            print("GROUPS_RESPONSES", groups_responses)
-            if answer == "\n":
-                groups_responses = list()
-        groups_responses.append(answer.split("\n"))  
+    print("ANSWER TO PART ONE: ", part_one(groups))
+    print("ANSWER TO PART TWO: ", part_two(groups))
 
-    counts = 0
-
-    for group in groups_responses:
-        group_letters = set()
-        group = 1
-        for letter in groups_responses[0]:
-            while group < len(groups_responses):
-                is_in = True
-                if letter not in groups_responses[group]:
-                    is_in = False
-            if is_in:
-                group_letters.add(letter)
-
-
-
-part_two()
 
 
