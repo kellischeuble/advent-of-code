@@ -37,21 +37,28 @@ def parse_rules_part_two(file: str) -> dict:
 
 rule_dict = parse_rules_part_two("rules.txt")
 
-# def count_bags_in_gold(cur_color="shiny gold", level_above=1, total=0):
-#     for required_bag in rule_dict[cur_color]:
-#         if required_bag == " other":
-#             return total
-#         no = rule_dict[cur_color][required_bag]
-#         total += (no * level_above)
-#         return count_bags_in_gold(required_bag, no*level_above, total)
+def count_bags_in_goldDFS(cur_color="shiny gold", level_above=1, total=0) -> int:
+    """
+    This function uses recursion and depth first search to calculate bag no. It is not
+    currently working... 
+    """
+    for required_bag in rule_dict[cur_color]:
+        if required_bag == " other":
+            return total
+        no = rule_dict[cur_color][required_bag]
+        total += (no * level_above)
+        return count_bags_in_goldDFS(required_bag, no*level_above, total)
 
-def count_bags_in_gold(rule_dict):
+def count_bags_in_gold_BFS(rule_dict) -> int:
+    """
+    This is working on all of my test cases, but for some reason is not
+    working on the test data
+    """
     queue = list()
+    total = 0
 
     for key, value in rule_dict["shiny gold"].items():
         queue.append([key, value, 1])
-
-    total = 0
 
     while len(queue) > 0:
         current = queue.pop(0)
@@ -106,5 +113,5 @@ if __name__ == "__main__":
     print("Answer to part one: ", bags)
 
     rule_dict_part_two = parse_rules_part_two("rules.txt")
-    bags = count_bags_in_gold(rule_dict_part_two)
+    bags = count_bags_in_gold_BFS(rule_dict_part_two)
     print("Answer to part two: ", bags)
