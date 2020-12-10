@@ -32,7 +32,6 @@ def find_contiguous_numbers_add_up(invalid, nums):
         while cur_sum <= invalid:
             if cur_sum == invalid and len(cur_numbers) > 1:
                 return cur_numbers
-                summed = True
                 exit()
             cur_sum += nums[j]
             cur_numbers.append([nums[j]])
