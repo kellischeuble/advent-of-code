@@ -17,3 +17,4 @@ def part_one():
 
     print("PART ONE ANSWER", differences[3] * differences[1])
 
+
